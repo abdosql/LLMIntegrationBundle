@@ -6,6 +6,23 @@
 
 namespace Saqqal\LlmIntegrationBundle\Exception;
 
-class ModelNotFoundException
+class ModelNotFoundException extends LlmIntegrationException
 {
+    /**
+     * Exception constant for identifying the type of exception.
+     */
+    public const NAME = "ModelNotFoundException";
+
+    /**
+     * Constructor for ModelNotFoundException.
+     *
+     * @param string $message The exception message.
+     * @param \Throwable|null $previous The previous throwable used for exception chaining.
+     *
+     * @return void
+     */
+    public function __construct(string $message, ?\Throwable $previous = null)
+    {
+        parent::__construct($message, 0, $previous);
+    }
 }

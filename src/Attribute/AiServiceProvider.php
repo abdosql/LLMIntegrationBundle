@@ -6,7 +6,16 @@
 
 namespace Saqqal\LlmIntegrationBundle\Attribute;
 
-class AiServiceProvider
+#[\Attribute(\Attribute::TARGET_CLASS)]
+final class AiServiceProvider
 {
-
+    /**
+     * AiServiceProvider constructor.
+     *
+     * @param string $provider The name of the AI service provider.
+     */
+    public function __construct(
+        public string $provider
+    ) {
+    }
 }

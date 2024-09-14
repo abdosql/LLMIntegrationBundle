@@ -6,7 +6,9 @@
 
 namespace Saqqal\LlmIntegrationBundle\Exception;
 
-class LlmIntegrationException
+/**
+ * @method getMessage()
+ */
+abstract class LlmIntegrationException extends \Exception
 {
-
 }

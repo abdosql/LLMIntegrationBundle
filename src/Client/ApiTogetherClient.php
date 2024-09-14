@@ -5,7 +5,7 @@
  */
 
 namespace Saqqal\LlmIntegrationBundle\Client;
+
 class ApiTogetherClient
 {
-
 }

@@ -5,33 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1ddafcc-0c82-4246-9967-03c12c1531a5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/LlmIntegrationBundle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LlmIntegrationBundle.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.php-cs-fixer.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.php-cs-fixer.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Attribute/AiClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attribute/AiClient.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Attribute/AiServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attribute/AiServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/ApiTogetherClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ApiTogetherClient.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/OpenAiClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OpenAiClient.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/CreateAiServiceCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CreateAiServiceCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DependencyInjection/Compiler/AiClientConfigurationPass.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DependencyInjection/Compiler/AiClientConfigurationPass.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DependencyInjection/Compiler/AiServiceAutoRegisterPass.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DependencyInjection/Compiler/AiServiceAutoRegisterPass.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DependencyInjection/Configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DependencyInjection/Configuration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DependencyInjection/LlmIntegrationExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DependencyInjection/LlmIntegrationExtension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Event/LlmIntegrationExceptionEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Event/LlmIntegrationExceptionEvent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventListener/LlmIntegrationExceptionListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/LlmIntegrationExceptionListener.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Exception/AiClientException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/AiClientException.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Exception/InvalidConfigurationException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/InvalidConfigurationException.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Exception/LlmIntegrationException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/LlmIntegrationException.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Exception/ModelNotFoundException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/ModelNotFoundException.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Exception/ProviderNotFoundException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/ProviderNotFoundException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Factory/AiServiceFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/AiServiceFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interface/AiClientInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/AiClientInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interface/AiServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/AiServiceInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LlmIntegrationBundle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/LlmIntegrationBundle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Response/AiResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Response/AiResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ApiTogetherService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ApiTogetherService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/OpenAiService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/OpenAiService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +151,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726334453739</updated>
-      <workItem from="1726334454747" duration="1265000" />
+      <workItem from="1726334454747" duration="4160000" />
     </task>
     <servers />
   </component>
