@@ -1,0 +1,43 @@
+{
+    "name": "saqqal/llm-integration-bundle",
+    "description": "Symfony bundle for integrating large language models (LLMs) into applications via api providers, supporting API Together and OpenAI.",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abdelaziz Saqqal",
+            "email": "abdosql@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "symfony/framework-bundle": "^7.1",
+        "symfony/http-client": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Saqqal\\LlmIntegrationBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Saqqal\\LlmIntegrationBundle\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "keywords": [
+        "symfony",
+        "bundle",
+        "ai",
+        "llm",
+        "api-together",
+        "openai"
+    ]
+}
