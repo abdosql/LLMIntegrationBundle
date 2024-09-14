@@ -1,6 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ComposerSettings">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e1ddafcc-0c82-4246-9967-03c12c1531a5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/LlmIntegrationBundle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LlmIntegrationBundle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attribute/AiClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attribute/AiClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attribute/AiServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attribute/AiServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ApiTogetherClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ApiTogetherClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/OpenAiClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OpenAiClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/CreateAiServiceCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/CreateAiServiceCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DependencyInjection/Compiler/AiClientConfigurationPass.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DependencyInjection/Compiler/AiClientConfigurationPass.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DependencyInjection/Compiler/AiServiceAutoRegisterPass.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DependencyInjection/Compiler/AiServiceAutoRegisterPass.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DependencyInjection/Configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DependencyInjection/Configuration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DependencyInjection/LlmIntegrationExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DependencyInjection/LlmIntegrationExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Event/LlmIntegrationExceptionEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Event/LlmIntegrationExceptionEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventListener/LlmIntegrationExceptionListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/LlmIntegrationExceptionListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/AiClientException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/AiClientException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/InvalidConfigurationException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/InvalidConfigurationException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/LlmIntegrationException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/LlmIntegrationException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/ModelNotFoundException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/ModelNotFoundException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exception/ProviderNotFoundException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/ProviderNotFoundException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factory/AiServiceFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/AiServiceFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/AiClientInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/AiClientInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/AiServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/AiServiceInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LlmIntegrationBundle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/LlmIntegrationBundle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Response/AiResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Response/AiResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ApiTogetherService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ApiTogetherService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/OpenAiService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/OpenAiService.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/clue/ndjson-react" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/fidry/cpu-core-counter" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/vendor/friendsofphp/php-cs-fixer" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/vendor/react/child-process" />
+      <path value="$PROJECT_DIR$/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+    </include_path>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2m4SeuhLc4qZWfMWzBpDBtfAnY9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "C:/Users/seqqal/Documents/GitHub/symfony/bundles/LlmIntegrationBundle",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "watcher.settings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PS-241.14494.237" />
+        <option value="bundled-php-predefined-ba97393d7c68-8f0632a2a215-com.jetbrains.php.sharedIndexes-PS-241.14494.237" />
+        <option value="php-friendsofphp_php_cs_fixer-37cbfb0ca1b6-94b05712" />
+        <option value="php-react_promise-37cbfb0ca1b6-f1d792f0" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e1ddafcc-0c82-4246-9967-03c12c1531a5" name="Changes" comment="" />
+      <created>1726334453739</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726334453739</updated>
+      <workItem from="1726334454747" duration="1265000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

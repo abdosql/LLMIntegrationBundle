@@ -4,6 +4,7 @@
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
  */
 
+namespace Saqqal\LlmIntegrationBundle\Client;
 class ApiTogetherClient
 {
 

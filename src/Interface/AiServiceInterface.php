@@ -4,7 +4,7 @@
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
  */
 
-namespace Interface;
+namespace Saqqal\LlmIntegrationBundle\Interface;
 
 interface AiServiceInterface
 {

@@ -4,7 +4,7 @@
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
  */
 
-namespace Exception;
+namespace Saqqal\LlmIntegrationBundle\Exception;
 
 class InvalidConfigurationException
 {

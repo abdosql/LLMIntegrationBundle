@@ -4,7 +4,7 @@
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
  */
 
-namespace Event;
+namespace Saqqal\LlmIntegrationBundle\Event;
 
 class LlmIntegrationExceptionEvent
 {

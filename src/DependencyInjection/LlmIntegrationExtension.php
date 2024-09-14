@@ -4,7 +4,7 @@
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
  */
 
-namespace DependencyInjection;
+namespace Saqqal\LlmIntegrationBundle\DependencyInjection;
 
 class LlmIntegrationExtension
 {

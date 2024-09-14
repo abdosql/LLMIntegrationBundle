@@ -4,6 +4,9 @@
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
  */
 
+
+namespace Saqqal\LlmIntegrationBundle\Attribute;
+
 class AiClient
 {
 

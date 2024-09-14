@@ -4,7 +4,7 @@
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
  */
 
-namespace DependencyInjection\Compiler;
+namespace Saqqal\LlmIntegrationBundle\DependencyInjection\Compiler;
 
 class AiServiceAutoRegisterPass
 {

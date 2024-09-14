@@ -4,7 +4,7 @@
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
  */
 
-namespace Factory;
+namespace Saqqal\LlmIntegrationBundle\Factory;
 
 class AiServiceFactory
 {

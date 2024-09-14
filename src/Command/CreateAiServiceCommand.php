@@ -4,7 +4,7 @@
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
  */
 
-namespace Command;
+namespace Saqqal\LlmIntegrationBundle\Command;
 
 class CreateAiServiceCommand
 {

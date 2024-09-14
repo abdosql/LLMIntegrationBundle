@@ -4,7 +4,7 @@
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
  */
 
-namespace Services;
+namespace Saqqal\LlmIntegrationBundle\Services;
 
 class OpenAiService
 {
