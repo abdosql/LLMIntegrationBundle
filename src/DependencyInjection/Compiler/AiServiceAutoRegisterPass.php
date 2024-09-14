@@ -8,5 +8,4 @@ namespace Saqqal\LlmIntegrationBundle\DependencyInjection\Compiler;
 
 class AiServiceAutoRegisterPass
 {
-
 }

@@ -8,5 +8,4 @@ namespace Saqqal\LlmIntegrationBundle\Client;
 
 class OpenAiClient
 {
-
 }

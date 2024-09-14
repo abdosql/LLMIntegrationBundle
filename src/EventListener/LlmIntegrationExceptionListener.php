@@ -8,5 +8,4 @@ namespace Saqqal\LlmIntegrationBundle\EventListener;
 
 class LlmIntegrationExceptionListener
 {
-
 }

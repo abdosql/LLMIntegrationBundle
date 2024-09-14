@@ -8,5 +8,4 @@ namespace Saqqal\LlmIntegrationBundle\Command;
 
 class CreateAiServiceCommand
 {
-
 }
