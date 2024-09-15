@@ -1,0 +1,18 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Saqqal\LlmIntegrationBundle\:
+    resource: '../../'
+    exclude:
+      - '../../DependencyInjection/'
+      - '../../Entity/'
+      - '../../Kernel.php'
+
+  Saqqal\LlmIntegrationBundle\EventListener\LlmIntegrationExceptionListener:
+    arguments:
+      $logger: '@logger'
+    tags:
+      - { name: kernel.event_listener, event: Saqqal\LlmIntegrationBundle\Event\LlmIntegrationExceptionEvent, method: onException }
