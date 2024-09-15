@@ -9,7 +9,9 @@ namespace Saqqal\LlmIntegrationBundle\Interface;
 use Saqqal\LlmIntegrationBundle\Exception\AiClientException;
 use Saqqal\LlmIntegrationBundle\Exception\ModelNotFoundException;
 use Saqqal\LlmIntegrationBundle\Response\AiResponse;
+use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 
+#[AutoconfigureTag('llm_integration.ai_service')]
 interface AiServiceInterface
 {
     /**

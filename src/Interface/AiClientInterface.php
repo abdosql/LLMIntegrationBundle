@@ -2,12 +2,16 @@
 /**
  * @author Saqqal Abdelaziz <seqqal.abdelaziz@gmail.com>
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
+ *
+ *  Interface for AI clients that interact with LLM (Large Language Model) APIs.
  */
 
 namespace Saqqal\LlmIntegrationBundle\Interface;
 
 use Saqqal\LlmIntegrationBundle\Response\AiResponse;
+use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 
+#[AutoconfigureTag('llm_integration.ai_client')]
 interface AiClientInterface
 {
     /**
