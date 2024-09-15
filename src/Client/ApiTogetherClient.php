@@ -61,7 +61,6 @@ class ApiTogetherClient implements AiClientInterface
                     'stream' => false,
                 ],
             ]);
-
             // Check the response status code
             $statusCode = $response->getStatusCode();
             if ($statusCode !== 200) {
@@ -90,6 +89,7 @@ class ApiTogetherClient implements AiClientInterface
             );
 
         } catch (\Exception $e) {
+            dd($e);
             // Handle exceptions and dispatch an event
             $exception = new AiClientException('Unexpected response structure from API', $e);
             $event = new LlmIntegrationExceptionEvent($exception);
