@@ -19,15 +19,15 @@ use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 #[AiClient('api_together')]
-readonly class ApiTogetherClient implements AiClientInterface
+class ApiTogetherClient implements AiClientInterface
 {
     private const API_URL = 'https://api.together.xyz/v1/chat/completions';
 
     public function __construct(
-        private HttpClientInterface  $httpClient,
-        private EventDispatcherInterface $eventDispatcher,
-        private string $apiKey,
-        private ?string $defaultModel
+        private readonly HttpClientInterface $httpClient,
+        private EventDispatcherInterface     $eventDispatcher,
+        private string                       $apiKey,
+        private ?string                      $defaultModel
     ) {
     }
 

@@ -6,13 +6,10 @@
 
 namespace Saqqal\LlmIntegrationBundle\DependencyInjection;
 
-use Saqqal\LlmIntegrationBundle\Factory\AiServiceFactory;
-use Saqqal\LlmIntegrationBundle\Interface\AiServiceInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
-use Symfony\Component\DependencyInjection\Reference;
 
 class LlmIntegrationExtension extends Extension
 {
@@ -30,21 +27,32 @@ class LlmIntegrationExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         // Set parameters for the extension
+        $this->setGlobalParameters($config, $container);
+
+        // Load services configuration from services.yaml file
+        $this->loadServicesConfigurations($container);
+    }
+
+    /**
+     * Sets global parameters for the extension.
+     *
+     * @param array            $config     The configuration values
+     * @param ContainerBuilder $container  The container builder
+     */
+    public function setGlobalParameters(array $config, ContainerBuilder $container): void
+    {
         $container->setParameter('llm_integration.provider', $config['llm_provider']);
         $container->setParameter('llm_integration.api_key', $config['llm_api_key']);
         $container->setParameter('llm_integration.model', $config['llm_model']);
+    }
 
-        // Load services configuration from services.yaml file
+    /**
+     * @throws \Exception
+     */
+    public function loadServicesConfigurations(ContainerBuilder $container): void
+    {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yaml');
-
-        // Register the AiServiceFactory
-        $container->register('llm_integration.ai_service_factory', AiServiceFactory::class)
-            ->setArgument('$container', new Reference('service_container'));
-
-        // Register the main AiService using the AiServiceFactory
-        $container->register('ai_service.main', AiServiceInterface::class)
-            ->setFactory([new Reference('llm_integration.ai_service_factory'), 'create'])
-            ->setArgument('$provider', '%llm_integration.provider%');
     }
+
 }
