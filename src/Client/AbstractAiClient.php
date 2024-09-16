@@ -13,8 +13,19 @@ use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
+/**
+ * Abstract class for AI clients implementing common functionality.
+ */
 abstract class AbstractAiClient implements AiClientInterface
 {
+    /**
+     * Constructor for AbstractAiClient.
+     *
+     * @param HttpClientInterface $httpClient The HTTP client for making API requests.
+     * @param EventDispatcherInterface $eventDispatcher The event dispatcher for handling exceptions.
+     * @param string $apiKey The API key for authentication.
+     * @param string|null $defaultModel The default AI model to use.
+     */
     public function __construct(
         protected readonly HttpClientInterface $httpClient,
         protected EventDispatcherInterface $eventDispatcher,
@@ -23,9 +34,19 @@ abstract class AbstractAiClient implements AiClientInterface
     ) {
     }
 
+    /**
+     * Abstract method to get the API URL for the specific AI service.
+     *
+     * @return string The API URL.
+     */
     abstract protected function getApiUrl(): string;
 
     /**
+     * Sends a prompt to the AI service and returns the response.
+     *
+     * @param string $prompt The prompt to send to the AI.
+     * @param string|null $model The specific model to use (optional).
+     * @return AiResponse The response from the AI service.
      * @throws AiClientException
      * @throws TransportExceptionInterface
      * @throws ServerExceptionInterface
@@ -75,6 +96,13 @@ abstract class AbstractAiClient implements AiClientInterface
         }
     }
 
+    /**
+     * Prepares the request data for the AI service.
+     *
+     * @param string $prompt The prompt to send.
+     * @param string|null $model The model to use.
+     * @return array The prepared request data.
+     */
     protected function prepareRequestData(string $prompt, ?string $model): array
     {
         $defaultData = [
@@ -86,11 +114,26 @@ abstract class AbstractAiClient implements AiClientInterface
         return array_merge($defaultData, $this->getAdditionalRequestData($prompt, $model));
     }
 
+    /**
+     * Gets additional request data specific to the AI service.
+     * Can be overridden by child classes to add service-specific data.
+     *
+     * @param string $prompt The prompt to send.
+     * @param string|null $model The model to use.
+     * @return array Additional request data.
+     */
     protected function getAdditionalRequestData(string $prompt, ?string $model): array
     {
         return [];
     }
 
+    /**
+     * Gets the default request data structure.
+     *
+     * @param string $prompt The prompt to send.
+     * @param string|null $model The model to use.
+     * @return array The default request data.
+     */
     protected function getDefaultRequestData(string $prompt, ?string $model): array
     {
         return [
