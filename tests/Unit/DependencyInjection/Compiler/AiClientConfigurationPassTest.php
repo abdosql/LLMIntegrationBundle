@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @author Saqqal Abdelaziz <seqqal.abdelaziz@gmail.com>
- * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
- */
-
 namespace Saqqal\LlmIntegrationBundle\Tests\Unit\DependencyInjection\Compiler;
 
 use PHPUnit\Framework\TestCase;

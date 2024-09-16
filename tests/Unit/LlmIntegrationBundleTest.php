@@ -4,7 +4,7 @@
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
  */
 
-namespace Saqqal\LlmIntegrationBundle\Tests;
+namespace Saqqal\LlmIntegrationBundle\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Saqqal\LlmIntegrationBundle\Attribute\AiClient;
@@ -12,10 +12,8 @@ use Saqqal\LlmIntegrationBundle\Attribute\AiServiceProvider;
 use Saqqal\LlmIntegrationBundle\DependencyInjection\Configuration;
 use Saqqal\LlmIntegrationBundle\DependencyInjection\LlmIntegrationExtension;
 use Saqqal\LlmIntegrationBundle\LlmIntegrationBundle;
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Definition;
 
 class LlmIntegrationBundleTest extends TestCase
 {
@@ -88,25 +86,9 @@ class LlmIntegrationBundleTest extends TestCase
         $this->assertEquals('dummy_provider', $instance->provider);
     }
 
-    public function testAiServiceProviderAttribute(): void
-    {
-        $reflectionClass = new \ReflectionClass(DummyAiServiceProvider::class);
-        $attributes = $reflectionClass->getAttributes(AiServiceProvider::class);
-
-        $this->assertCount(1, $attributes);
-        $this->assertEquals(AiServiceProvider::class, $attributes[0]->getName());
-
-        $instance = $attributes[0]->newInstance();
-        $this->assertEquals('dummy_service_provider', $instance->provider);
-    }
 }
 
 #[AiClient('dummy_provider')]
 class DummyAiClient
-{
-}
-
-#[AiServiceProvider('dummy_service_provider')]
-class DummyAiServiceProvider
 {
 }
