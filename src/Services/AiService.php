@@ -6,6 +6,7 @@
 
 namespace Saqqal\LlmIntegrationBundle\Services;
 
-class OpenAiService
+class AiService
 {
+
 }
