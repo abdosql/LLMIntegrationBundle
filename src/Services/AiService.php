@@ -17,10 +17,12 @@ class AiService implements AiServiceInterface
      *
      * @param AiClientInterface $client The AI client to interact with the API Together service.
      * @param string $model The default model to use for generating AI responses.
+     * @param string $provider
      */
     public function __construct(
         private readonly AiClientInterface $client,
         private string $model,
+        private string $provider
     ) {
     }
 
@@ -44,7 +46,7 @@ class AiService implements AiServiceInterface
      */
     public function getProviderName(): string
     {
-        return 'API Together';
+        return ucfirst($this->provider);
     }
 
     /**

@@ -35,6 +35,7 @@ class AiServiceAutoRegisterPass implements CompilerPassInterface
         }
         $serviceDefinition->setArgument('$client', new Reference('ai_client.' . $serviceProvider));
         $serviceDefinition->setArgument('$model', '%llm_integration.model%');
+        $serviceDefinition->setArgument('$provider', $serviceProvider);
     }
 
     public function getServiceInstance(ContainerBuilder $container, array $services): Definition
