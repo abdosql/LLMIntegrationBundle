@@ -11,4 +11,10 @@ namespace Saqqal\LlmIntegrationBundle\Exception;
  */
 abstract class LlmIntegrationException extends \Exception
 {
+    public const NAME = 'LlmIntegrationException';
+
+    public function __construct(string $message, int $code = 0, ?\Throwable $previous = null)
+    {
+        parent::__construct($message, $code, $previous);
+    }
 }

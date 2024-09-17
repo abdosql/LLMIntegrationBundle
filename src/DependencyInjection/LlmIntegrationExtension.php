@@ -6,10 +6,14 @@
 
 namespace Saqqal\LlmIntegrationBundle\DependencyInjection;
 
+use Saqqal\LlmIntegrationBundle\EventSubscriber\LlmIntegrationExceptionListener;
+use Saqqal\LlmIntegrationBundle\EventSubscriber\LlmIntegrationExceptionSubscriber;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Symfony\Component\DependencyInjection\Reference;
 
 class LlmIntegrationExtension extends Extension
 {
@@ -31,6 +35,8 @@ class LlmIntegrationExtension extends Extension
 
         // Load services configuration from services.yaml file
         $this->loadServicesConfigurations($container);
+
+        $this->registerExceptionSubscriber($container);
     }
 
     /**
@@ -55,4 +61,11 @@ class LlmIntegrationExtension extends Extension
         $loader->load('services.yaml');
     }
 
+    private function registerExceptionSubscriber(ContainerBuilder $container): void
+    {
+        $subscriberDefinition = new Definition(LlmIntegrationExceptionSubscriber::class);
+        $subscriberDefinition->setArgument('$logger', new Reference('logger'));
+        $subscriberDefinition->addTag('kernel.event_subscriber');
+        $container->setDefinition('llm_integration.exception_subscriber', $subscriberDefinition);
+    }
 }

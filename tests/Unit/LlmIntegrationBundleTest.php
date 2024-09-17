@@ -8,7 +8,6 @@ namespace Saqqal\LlmIntegrationBundle\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Saqqal\LlmIntegrationBundle\Attribute\AiClient;
-use Saqqal\LlmIntegrationBundle\Attribute\AiServiceProvider;
 use Saqqal\LlmIntegrationBundle\DependencyInjection\Configuration;
 use Saqqal\LlmIntegrationBundle\DependencyInjection\LlmIntegrationExtension;
 use Saqqal\LlmIntegrationBundle\LlmIntegrationBundle;

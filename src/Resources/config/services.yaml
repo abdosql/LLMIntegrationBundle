@@ -11,8 +11,8 @@ services:
       - '../../Entity/'
       - '../../Kernel.php'
 
-  Saqqal\LlmIntegrationBundle\EventListener\LlmIntegrationExceptionListener:
+  Saqqal\LlmIntegrationBundle\EventSubscriber\LlmIntegrationExceptionSubscriber:
     arguments:
       $logger: '@logger'
     tags:
-      - { name: kernel.event_listener, event: Saqqal\LlmIntegrationBundle\Event\LlmIntegrationExceptionEvent, method: onException }
+      - { name: kernel.event_subscriber }

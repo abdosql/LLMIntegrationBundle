@@ -12,6 +12,7 @@ class ModelNotFoundException extends LlmIntegrationException
      * Exception constant for identifying the type of exception.
      */
     public const NAME = "ModelNotFoundException";
+    public const HTTP_CODE = 404;
 
     /**
      * Constructor for ModelNotFoundException.
@@ -23,6 +24,6 @@ class ModelNotFoundException extends LlmIntegrationException
      */
     public function __construct(string $message, ?\Throwable $previous = null)
     {
-        parent::__construct($message, 0, $previous);
+        parent::__construct($message, self::HTTP_CODE, $previous);
     }
 }
