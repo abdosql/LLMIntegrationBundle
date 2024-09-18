@@ -22,7 +22,7 @@ interface AiServiceInterface
      * @return AiResponse The generated response
      * @throws AiClientException
      */
-    public function generate(string $prompt, array $options = []): AiResponse;
+    public function generate(string $prompt, array $options = []): mixed;
 
     /**
      * Get the name of the AI provider.

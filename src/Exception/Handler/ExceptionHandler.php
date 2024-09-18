@@ -6,6 +6,7 @@
 
 namespace Saqqal\LlmIntegrationBundle\Exception\Handler;
 
+use Saqqal\LlmIntegrationBundle\Exception\DefaultLlmIntegrationException;
 use Saqqal\LlmIntegrationBundle\Exception\InvalidRequestException;
 use Saqqal\LlmIntegrationBundle\Exception\AuthenticationFailureException;
 use Saqqal\LlmIntegrationBundle\Exception\TokenLimitExceededException;
@@ -40,7 +41,7 @@ class ExceptionHandler
             return $exception;
         }
 
-        $responseMessage = json_decode($response->getContent(false))->error->message;
+        $responseMessage = json_decode($response->getContent(false))->error->message ?? $exception->getMessage();
         $statusCode = $response->getStatusCode();
 
         return match ($statusCode) {
@@ -54,6 +55,7 @@ class ExceptionHandler
             504 => new GatewayTimeoutException($responseMessage, $exception),
             524 => new CloudflareTimeoutException($responseMessage, $exception),
             529 => new CloudflareOverloadException($responseMessage, $exception),
+            default => new DefaultLlmIntegrationException($responseMessage, $exception),
         };
     }
 }

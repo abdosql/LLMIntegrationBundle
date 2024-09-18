@@ -27,7 +27,6 @@ class AiClientConfigurationPass implements CompilerPassInterface
     public function process(ContainerBuilder $container): void
     {
         $clients = $container->findTaggedServiceIds('llm_integration.ai_client');
-        $provider = $container->getParameter('llm_integration.provider');
         if (!$clients) {
             throw new AiClientException("No Ai Clients found");
         }

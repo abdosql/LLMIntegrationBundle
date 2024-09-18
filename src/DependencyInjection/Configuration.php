@@ -28,7 +28,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->enumNode('llm_provider')
-                    ->values(['api_together', 'openai','groq'])
+                    ->values(['api_together', 'openai','groq', 'anthropic'])
                     ->cannotBeEmpty()
                     ->defaultValue('api_together')
                     ->isRequired()

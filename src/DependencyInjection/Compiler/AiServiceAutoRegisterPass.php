@@ -15,6 +15,11 @@ class AiServiceAutoRegisterPass implements CompilerPassInterface
 {
     private const SERVICE_ID_PREFIX = 'ai_service.';
 
+    /**
+     * Process the container and register AI service definitions.
+     *
+     * @param ContainerBuilder $container The container builder
+     */
     public function process(ContainerBuilder $container): void
     {
         $provider = $container->getParameter('llm_integration.provider');
@@ -24,6 +29,13 @@ class AiServiceAutoRegisterPass implements CompilerPassInterface
         $this->setAiServiceInterfaceNewAlias($container, $provider);
     }
 
+    /**
+     * Configure the AI service definition based on the given provider.
+     *
+     * @param ContainerBuilder $container The container builder
+     * @param array $services The tagged AI service definitions
+     * @param string $serviceProvider The AI service provider
+     */
     public function configureService(ContainerBuilder $container, array $services, string $serviceProvider): void
     {
         $serviceDefinition = $this->getServiceInstance($container, $services);
@@ -38,6 +50,13 @@ class AiServiceAutoRegisterPass implements CompilerPassInterface
         $serviceDefinition->setArgument('$provider', $serviceProvider);
     }
 
+    /**
+     * Get the first service definition from the given array.
+     *
+     * @param ContainerBuilder $container The container builder
+     * @param array $services The tagged AI service definitions
+     * @return Definition The first service definition
+     */
     public function getServiceInstance(ContainerBuilder $container, array $services): Definition
     {
         $serviceDefinition = new Definition();
@@ -54,6 +73,7 @@ class AiServiceAutoRegisterPass implements CompilerPassInterface
      * to the 'ai_service.main' service.
      *
      * @param ContainerBuilder $container The container builder
+     * @param string $provider The AI service provider
      */
     public function setAiServiceInterfaceNewAlias(ContainerBuilder $container, string $provider): void
     {

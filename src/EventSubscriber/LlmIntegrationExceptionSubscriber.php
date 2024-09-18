@@ -13,13 +13,26 @@ use Psr\Log\LoggerInterface;
 
 class LlmIntegrationExceptionSubscriber implements EventSubscriberInterface
 {
+    /**
+     * @var LoggerInterface
+     */
     private LoggerInterface $logger;
 
+    /**
+     * Constructor.
+     *
+     * @param LoggerInterface $logger The logger service
+     */
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
 
+    /**
+     * Returns an array of event names this subscriber wants to listen to.
+     *
+     * @return array The event names to listen to
+     */
     public static function getSubscribedEvents(): array
     {
         return [
@@ -27,11 +40,21 @@ class LlmIntegrationExceptionSubscriber implements EventSubscriberInterface
         ];
     }
 
+    /**
+     * Logs the LlmIntegrationException.
+     *
+     * @param LlmIntegrationExceptionEvent $event The event that triggered this method
+     */
     public function onCustomException(LlmIntegrationExceptionEvent $event): void
     {
         $this->logLlmIntegrationException($event->getException());
     }
 
+    /**
+     * Logs the LlmIntegrationException.
+     *
+     * @param LlmIntegrationException $exception The exception to log
+     */
     private function logLlmIntegrationException(LlmIntegrationException $exception): void
     {
         $context = [

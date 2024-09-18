@@ -7,15 +7,32 @@
 namespace Saqqal\LlmIntegrationBundle\Event\Dispatcher;
 
 use Saqqal\LlmIntegrationBundle\Event\LlmIntegrationExceptionEvent;
-use Saqqal\LlmIntegrationBundle\Exception\LlmIntegrationException;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
+/**
+ * Class ExceptionEventDispatcher
+ *
+ * This class is responsible for dispatching LlmIntegrationExceptionEvents.
+ * It utilizes Symfony's EventDispatcherInterface to handle the event dispatching.
+ */
 class ExceptionEventDispatcher
 {
+    /**
+     * ExceptionEventDispatcher constructor.
+     *
+     * @param EventDispatcherInterface $eventDispatcher Symfony's EventDispatcherInterface instance.
+     */
     public function __construct(private readonly EventDispatcherInterface $eventDispatcher)
     {
     }
 
+    /**
+     * Dispatches the given LlmIntegrationExceptionEvent.
+     *
+     * @param LlmIntegrationExceptionEvent $event The event to be dispatched.
+     *
+     * @return void
+     */
     public function dispatchException(LlmIntegrationExceptionEvent $event): void
     {
         $this->eventDispatcher->dispatch($event, LlmIntegrationExceptionEvent::class);
