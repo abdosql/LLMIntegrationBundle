@@ -8,9 +8,9 @@ namespace Saqqal\LlmIntegrationBundle\Command;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -22,18 +22,38 @@ class CreateAiServiceCommand extends Command
         parent::__construct();
     }
 
-    protected function configure(): void
-    {
-        $this
-            ->addArgument('name', InputArgument::REQUIRED, 'The name of the AI service')
-            ->addArgument('endpoint', InputArgument::REQUIRED, 'The API endpoint for the service');
-    }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
-        $name = $input->getArgument('name');
-        $endpoint = $input->getArgument('endpoint');
+        $helper = $this->getHelper('question');
+
+        $io->warning('You are about to create a new AI Client. Please proceed with caution.');
+
+        // Provider name validation
+        $nameQuestion = new Question('Please enter the provider name: ');
+        $nameQuestion->setValidator(function ($answer) {
+            if (!is_string($answer) || trim($answer) === '') {
+                throw new \RuntimeException('Provider name must be a non-empty string.');
+            }
+            return $answer;
+        });
+        $name = $helper->ask($input, $output, $nameQuestion);
+
+        $io->success('Great! One step left.');
+
+        // API endpoint validation
+        $endpointQuestion = new Question('Please enter the API endpoint: ');
+        $endpointQuestion->setValidator(function ($answer) {
+            if (!is_string($answer) || trim($answer) === '') {
+                throw new \RuntimeException('API endpoint must be a non-empty string.');
+            }
+            if (!filter_var($answer, FILTER_VALIDATE_URL)) {
+                throw new \RuntimeException('API endpoint must be a valid URL.');
+            }
+            return $answer;
+        });
+        $endpoint = $helper->ask($input, $output, $endpointQuestion);
 
         $className = ucfirst($name) . 'Client';
         $providerName = strtolower($name);
