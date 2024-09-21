@@ -1,9 +1,12 @@
 <?php
+/**
+ * @author Saqqal Abdelaziz <seqqal.abdelaziz@gmail.com>
+ * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
+ */
 
 namespace Saqqal\LlmIntegrationBundle\Client;
 
 use Saqqal\LlmIntegrationBundle\Attribute\AiClient;
-use Saqqal\LlmIntegrationBundle\Client\AbstractAiClient;
 
 #[AiClient('tavily')]
 class TavilyClient extends AbstractAiClient
