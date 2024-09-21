@@ -54,6 +54,15 @@ class LlmIntegrationExtension extends Extension
     }
 
     /**
+     * Loads the services configurations from the services.yaml file.
+     *
+     * This function creates a new instance of the YamlFileLoader class, which is responsible for loading
+     * the services configuration from the specified file. The FileLocator is used to locate the file in the
+     * specified directory. Finally, the load method is called to actually load the services configuration.
+     *
+     * @param ContainerBuilder $container The container builder to register the services in.
+     *
+     * @return void
      * @throws \Exception
      */
     public function loadServicesConfigurations(ContainerBuilder $container): void
@@ -62,11 +71,27 @@ class LlmIntegrationExtension extends Extension
         $loader->load('services.yaml');
     }
 
+    /**
+     * Registers the LlmIntegrationExceptionSubscriber service in the container.
+     *
+     * This subscriber listens for exceptions thrown during the application's runtime and logs them.
+     *
+     * @param ContainerBuilder $container The container builder to register the service in.
+     *
+     * @return void
+     */
     private function registerExceptionSubscriber(ContainerBuilder $container): void
     {
+        // Create a new Definition for the LlmIntegrationExceptionSubscriber class
         $subscriberDefinition = new Definition(LlmIntegrationExceptionSubscriber::class);
+
+        // Set the 'logger' service as an argument for the subscriber
         $subscriberDefinition->setArgument('$logger', new Reference('logger'));
+
+        // Tag the subscriber as a 'kernel.event_subscriber' to enable it during the event dispatching process
         $subscriberDefinition->addTag('kernel.event_subscriber');
+
+        // Register the subscriber in the container with the 'llm_integration.exception_subscriber' id
         $container->setDefinition('llm_integration.exception_subscriber', $subscriberDefinition);
     }
 
