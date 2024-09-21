@@ -65,7 +65,6 @@ abstract class AbstractAiClient implements AiClientInterface
         $model = $model ?? $this->defaultModel;
         try {
             $requestData = $this->prepareRequestData($prompt, $model);
-
             $response = $this->httpClient->request('POST', $this->getApiUrl(), [
                 'headers' => $this->getRequestHeaders(),
                 'json' => $requestData,
@@ -103,10 +102,6 @@ abstract class AbstractAiClient implements AiClientInterface
         }
 
         $content = json_decode($response->getContent(), true);
-
-        if (!isset($content['choices'][0]['message']['content'])) {
-            throw new AiClientException('Unexpected response structure from API');
-        }
 
         return $dynamicResponse
             ? $this->createDynamicAiResponse($content)
