@@ -1,5 +1,13 @@
 <?php
 
+namespace Saqqal\LlmIntegrationBundle;
+
+use Saqqal\LlmIntegrationBundle\DependencyInjection\Compiler\AiClientConfigurationPass;
+use Saqqal\LlmIntegrationBundle\DependencyInjection\Compiler\AiServiceAutoRegisterPass;
+use Saqqal\LlmIntegrationBundle\DependencyInjection\Compiler\CollectAiClientsPass;
+use Saqqal\LlmIntegrationBundle\DependencyInjection\Compiler\UpdateConfigurationPass;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
@@ -7,7 +15,27 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
  */
 
+/**
+ * LlmIntegrationBundle integrates large language models (LLMs) into Symfony applications.
+ * It supports multiple AI providers with a scalable architecture for easy addition of new providers.
+ */
+
 class LlmIntegrationBundle extends Bundle
 {
+    public function __construct()
+    {
+    }
 
+    public function getPath(): string
+    {
+        return \dirname(__DIR__);
+    }
+
+    public function build(ContainerBuilder $container): void
+    {
+        parent::build($container);
+
+        $container->addCompilerPass(new AiServiceAutoRegisterPass());
+        $container->addCompilerPass(new AiClientConfigurationPass());
+    }
 }

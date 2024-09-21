@@ -4,7 +4,18 @@
  * @Linkedin https://www.linkedin.com/abdelaziz-saqqal
  */
 
-class AiClient
-{
+namespace Saqqal\LlmIntegrationBundle\Attribute;
 
+#[\Attribute(\Attribute::TARGET_CLASS)]
+final class AiClient
+{
+    /**
+     * Constructor for AiClient class.
+     *
+     * @param string $provider The name of the AI client provider.
+     */
+    public function __construct(
+        public string $provider
+    ) {
+    }
 }
