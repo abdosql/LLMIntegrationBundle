@@ -6,6 +6,7 @@
 
 namespace Saqqal\LlmIntegrationBundle\Command;
 
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -13,23 +14,17 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Filesystem\Filesystem;
 
+#[AsCommand(name: 'llm:create-ai-service', description: "Create a new AI service class'")]
 class CreateAiServiceCommand extends Command
 {
-    protected static $defaultName = 'llm:create-ai-service';
-    protected static $defaultDescription = 'Create a new AI service class';
-
-    private string $projectDir;
-
-    public function __construct(string $projectDir)
+    public function __construct(private readonly string $projectDir)
     {
-        parent::__construct(self::$defaultName);
-        $this->projectDir = $projectDir;
+        parent::__construct();
     }
 
     protected function configure(): void
     {
         $this
-            ->setDescription(self::$defaultDescription)
             ->addArgument('name', InputArgument::REQUIRED, 'The name of the AI service')
             ->addArgument('endpoint', InputArgument::REQUIRED, 'The API endpoint for the service');
     }
@@ -43,11 +38,12 @@ class CreateAiServiceCommand extends Command
         $className = ucfirst($name) . 'Client';
         $providerName = strtolower($name);
 
-        $content = $this->generateClassContent($className, $providerName, $endpoint);
+        $namespace = 'App\\Client';
+
+        $content = $this->generateClassContent($className, $providerName, $endpoint, $namespace);
 
         $filesystem = new Filesystem();
         $filePath = sprintf('%s/src/Client/%s.php', $this->projectDir, $className);
-
         try {
             $filesystem->dumpFile($filePath, $content);
             $io->success(sprintf('AI service "%s" created successfully at %s', $className, $filePath));
@@ -59,14 +55,15 @@ class CreateAiServiceCommand extends Command
         return Command::SUCCESS;
     }
 
-    private function generateClassContent(string $className, string $providerName, string $endpoint): string
+    private function generateClassContent(string $className, string $providerName, string $endpoint, string $namespace): string
     {
         return <<<PHP
 <?php
 
-namespace Saqqal\LlmIntegrationBundle\Client;
+namespace $namespace;
 
 use Saqqal\LlmIntegrationBundle\Attribute\AiClient;
+use Saqqal\LlmIntegrationBundle\Client\AbstractAiClient;
 
 #[AiClient('$providerName')]
 class $className extends AbstractAiClient
