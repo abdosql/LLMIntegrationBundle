@@ -23,12 +23,10 @@ class Configuration implements ConfigurationInterface
         // Create a tree builder with the root name "llm_integration"
         $treeBuilder = new TreeBuilder("llm_integration");
         $rootNode = $treeBuilder->getRootNode();
-
         // Define the configuration settings
         $rootNode
             ->children()
-                ->enumNode('llm_provider')
-                    ->values(['api_together', 'openai','groq', 'anthropic'])
+                ->scalarNode('llm_provider')
                     ->cannotBeEmpty()
                     ->defaultValue('api_together')
                     ->isRequired()

@@ -16,3 +16,7 @@ services:
       $logger: '@logger'
     tags:
       - { name: kernel.event_subscriber }
+  Saqqal\LlmIntegrationBundle\Command\CreateAiServiceCommand:
+    arguments:
+      $projectDir: '%kernel.project_dir%'
+    tags: [ 'console.command' ]

@@ -4,7 +4,10 @@ namespace Saqqal\LlmIntegrationBundle;
 
 use Saqqal\LlmIntegrationBundle\DependencyInjection\Compiler\AiClientConfigurationPass;
 use Saqqal\LlmIntegrationBundle\DependencyInjection\Compiler\AiServiceAutoRegisterPass;
+use Saqqal\LlmIntegrationBundle\DependencyInjection\Compiler\CollectAiClientsPass;
+use Saqqal\LlmIntegrationBundle\DependencyInjection\Compiler\UpdateConfigurationPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**

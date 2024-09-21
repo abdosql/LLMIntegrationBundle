@@ -34,27 +34,27 @@ class ExceptionHandler
      * @throws ClientExceptionInterface
      * @throws RedirectionExceptionInterface
      * @throws ServerExceptionInterface
+     * @throws \Exception
      */
     public function handle(\Throwable $exception, ResponseInterface $response): LlmIntegrationException
     {
         if ($exception instanceof LlmIntegrationException) {
             return $exception;
         }
-
         $responseMessage = json_decode($response->getContent(false))->error->message ?? $exception->getMessage();
         $statusCode = $response->getStatusCode();
 
         return match ($statusCode) {
-            400 => new InvalidRequestException($responseMessage, $exception),
-            401 => new AuthenticationFailureException($responseMessage, $exception),
-            403 => new TokenLimitExceededException($responseMessage, $exception),
-            404 => new ModelNotFoundException($responseMessage, $exception),
-            429 => new RateLimitExceededException($responseMessage, $exception),
-            500 => new InternalServerErrorException($responseMessage, $exception),
-            503 => new ServerOverloadException($responseMessage, $exception),
-            504 => new GatewayTimeoutException($responseMessage, $exception),
-            524 => new CloudflareTimeoutException($responseMessage, $exception),
-            529 => new CloudflareOverloadException($responseMessage, $exception),
+            InvalidRequestException::HTTP_CODE => new InvalidRequestException($responseMessage, $exception),
+            AuthenticationFailureException::HTTP_CODE => new AuthenticationFailureException($responseMessage, $exception),
+            TokenLimitExceededException::HTTP_CODE => new TokenLimitExceededException($responseMessage, $exception),
+            ModelNotFoundException::HTTP_CODE => new ModelNotFoundException($responseMessage, $exception),
+            RateLimitExceededException::HTTP_CODE => new RateLimitExceededException($responseMessage, $exception),
+            InternalServerErrorException::HTTP_CODE => new InternalServerErrorException($responseMessage, $exception),
+            ServerOverloadException::HTTP_CODE => new ServerOverloadException($responseMessage, $exception),
+            GatewayTimeoutException::HTTP_CODE => new GatewayTimeoutException($responseMessage, $exception),
+            CloudflareTimeoutException::HTTP_CODE => new CloudflareTimeoutException($responseMessage, $exception),
+            CloudflareOverloadException::HTTP_CODE => new CloudflareOverloadException($responseMessage, $exception),
             default => new DefaultLlmIntegrationException($responseMessage, $exception),
         };
     }

@@ -15,7 +15,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  * This class is responsible for dispatching LlmIntegrationExceptionEvents.
  * It utilizes Symfony's EventDispatcherInterface to handle the event dispatching.
  */
-class ExceptionEventDispatcher
+final class ExceptionEventDispatcher
 {
     /**
      * ExceptionEventDispatcher constructor.

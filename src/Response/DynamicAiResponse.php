@@ -6,9 +6,6 @@
 
 namespace Saqqal\LlmIntegrationBundle\Response;
 
-use Symfony\Component\PropertyAccess\PropertyAccess;
-use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
-
 /**
  * Class DynamicAiResponse
  *
