@@ -14,15 +14,34 @@ use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Filesystem\Filesystem;
 
+/*
+ * This command is used to create a new AI service class.
+*/
+
 #[AsCommand(name: 'llm:create-ai-service', description: "Create a new AI service class'")]
 class CreateAiServiceCommand extends Command
 {
+    /**
+     * Constructor.
+     *
+     * @param string $projectDir The project directory path
+     */
     public function __construct(private readonly string $projectDir)
     {
         parent::__construct();
     }
 
-
+    /**
+     * Executes the command to create a new AI service class.
+     *
+     * @param InputInterface  $input  An InputInterface instance
+     * @param OutputInterface $output An OutputInterface instance
+     *
+     * @return int 0 if everything went fine, or an error code
+     *
+     * @throws \RuntimeException If the provider name or API endpoint are invalid
+     * @throws \Exception If there is an error creating the AI service file
+     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
@@ -74,7 +93,16 @@ class CreateAiServiceCommand extends Command
 
         return Command::SUCCESS;
     }
-
+    /**
+     * Generates the content of the AI service class file.
+     *
+     * @param string $className   The name of the AI service class
+     * @param string $providerName The name of the AI service provider
+     * @param string $endpoint    The API endpoint of the AI service
+     * @param string $namespace   The namespace of the AI service class
+     *
+     * @return string The content of the AI service class file
+     */
     private function generateClassContent(string $className, string $providerName, string $endpoint, string $namespace): string
     {
         return <<<PHP
