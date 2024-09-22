@@ -1,8 +1,8 @@
 # 🤖 LLMIntegrationBundle
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PHP Version](https://img.shields.io/badge/php-%3E%3D8.1-8892BF.svg)](https://www.php.net/)
-[![Symfony Version](https://img.shields.io/badge/symfony-%5E6.0%7C%5E7.0-000000.svg)](https://symfony.com/)
+[![PHP Version](https://img.shields.io/badge/php-%3E%3D8.0-8892BF.svg)](https://www.php.net/)
+[![Symfony Version](https://img.shields.io/badge/symfony-%5E5.4%7C%5E6.0%7C%5E7.0-000000.svg)](https://symfony.com/)
 
 LLMIntegrationBundle is a powerful Symfony bundle that seamlessly integrates Large Language Models (LLMs) into your Symfony applications. With support for multiple AI providers and a flexible architecture, it's designed for easy extension and customization.
 
@@ -232,3 +232,12 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 ## 📚 Documentation
 
 For more detailed documentation, please visit our [Wiki]().
+
+## 🛠️ Requirements
+
+- PHP 8.0 or higher
+- Symfony 5.4 or higher (including Symfony 6.x and 7.x)
+
+## 🙏 Acknowledgements
+
+Special thanks to all contributors and the Symfony community for their support and feedback.
